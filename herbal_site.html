@@ -29,9 +29,18 @@
 		
 		#contents {min-height: 700px;float:left;background-color: Rgba(255,255,255,0.5) }
 		#homepage-banner {padding: 24px 0 0 22px; background: url(images/homepage.png) top center no-repeat transparent;height:248px;width:882px; }
-		#left-content {width:593px;float:left;border:1px solid black;}
-		#right-content {width:265px; min-height:600px; float:right; border:1px solid black; padding-right:36px;}
-		#left-content h1 {padding-left:24px; color: #975b01;}
+		#left-content {margin: 0 0 0 24px; width:595px; float:left; }
+		#right-content {width:260px; min-height:600px; float:right; border:1px solid black; margin-right:19px;}
+		
+		h1, h2, h3, h4 { margin: 0; padding: 0; }
+		h1 { color: #975b01; font-size: 18px; }
+		
+		.rounded-border { padding: 15px; border: 1px solid #eaddb9; float: left; width: 563px; }
+		.rounded-corners {
+		  -moz-border-radius: 10px; /* Firefox */
+		  -webkit-border-radius: 10px; /* Safari, Chrome */
+		  border-radius: 10px; /* CSS3 */
+		}		
 		#products {display:block; float:left; padding-left:24px;}
 		#products img { }
 		
@@ -88,12 +97,14 @@
 				<img src="images/homepage-banner.png" width="860px" height="219px" />
 			</div>
 			<div id="left-content">
-				<h1>Product spotlight</h1>
-				<div id="products">
-					<img src="images/product1.png" width="40px" height="104px" />
-					<img src="images/product2.png" width="48px" height="99px" />
-					<img src="images/product3.png" width="49px" height="101px" />
-					<img src="images/product4.png" width="97px" height="104px" />
+				<div class="rounded-border rounded-corners">
+					<h1>Product spotlight</h1>
+					<div id="products">
+						<img src="images/product1.png" width="40px" height="104px" />
+						<img src="images/product2.png" width="48px" height="99px" />
+						<img src="images/product3.png" width="49px" height="101px" />
+						<img src="images/product4.png" width="97px" height="104px" />
+					</div>
 				</div>
 			</div>
 			
