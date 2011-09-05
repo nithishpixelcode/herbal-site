@@ -1,0 +1,21 @@
+Training Day 1 - HTML/CSS
+
+1. If you add padding to an element, we have to subtract that amount from the width of that element.
+2. Float left on an element that includes other block elements, allows it to auto resize to include all those elements it contains. 
+3. Elements that have float right appear in reverse order.
+4. For problematic elements, we can use position property absolute to force position it. The parent element then needs position property relative. 
+5. To vertically align elements, line-height property comes in handy. 
+6. Inherit property is useful.
+7. For a and img tags, set outline, border to 0.
+8. Margin refers to outer spacing and padding refers to the inner spacing for an element.
+9. For menu items, its good to use ul, li tags for SEO purposes.
+10. id attribute is used for unique elements, whereas class attribute is used for elements whose styles repeat elsewhere. You can reference only 1 unique id, whereas classes can be referenced at multiple instances.
+11. Cross browser support for border radius.
+12. Float left elements stack up one after the another if it has space, otherwise it moves to the next line. 
+13. Clear both, is useful to clear elements on the current line, and start fresh on a new line. 
+14. Write less to do more, and always format code. This helps when  you are working in a team to make your code readable to others. Comment if and when necessary.
+15. li, h1, and various other html tags have browser pre-set styling that needs to be over-ridden if need be. Example: padding: 0 for list elements.
+
+Training Day 2 - Djangofy
+
+
