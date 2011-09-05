@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-AU" lang="en-AU">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Herbal Medicine</title>
+	<style>
+		body { background: url(images/bg-glow.png) top center no-repeat #f8ebb8; margin: 0; font-family: sans-serif; font-size: 13px; }
+		#main_container { width: 908px;margin: 0 auto; }
+		#header, #footer, #contents { width: 100%;}
+		#header { height: 135px; padding: 22px 0 0 0; }
+		#logo { padding-top: 19px; display: block; float: left; }
+		#top-buttons { float: right }
+		.button, #search { display: block; float: left; margin-right: 14px; }
+		#live-help { background: url(images/live-help.png) top center no-repeat transparent; width: 91px; font-weight: bold; margin-right: 7px !important; }
+		#login-register { background: url(images/login-register.png) top center no-repeat transparent; width: 118px; }
+		.button { height: 39px; padding: 0 0 0 15px; line-height: 39px; color: #975b01; text-decoration: none; }
+		.button a { text-decoration: none; color: #975b01; }
+		a.button:hover, .button a:hover { text-decoration: underline; }
+		#search { background: url(images/search.png) top center no-repeat transparent; height: 29px; width: 219px; padding: 5px 5px 5px 10px;}
+		#search input { border: none; outline: none; }
+		#search-keywords { height: 28px; width: 180px; color: #975b01; }
+		#search-submit { float: right; }
+		#menu { float : right; display: block; }
+		#contents { min-height: 700px; }
+		#footer { height: 180px; }
+	</style>
+	
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+	<script type="text/javascript" charset="utf-8"> 
+		$(document).ready(function(){
+			//Code to blur search box
+			$('#search-keywords').each(function() {
+				var default_value = this.value;
+				$(this).focus(function() {
+					if(this.value == default_value) {
+						this.value = '';
+					}
+				});
+				$(this).blur(function() {
+					if(this.value == '') {
+						this.value = default_value;
+					}
+				});
+			});
+		});
+	</script> 
+</head>
+<body>
+	<div id="main_container">
+		<div id="header">
+			<a id="logo" href="."><img src="images/logo.png" /></a>
+			<div id="top-buttons">
+				<a id="live-help" class="button" href="#">Live help</a>
+				<div id="login-register" class="button" href="#"><a href="login">Login</a>/<a href="register">Register</a></div>
+				<form id="search">
+					<input id="search-keywords" name="search-keywords" type="text" value="Search" />
+					<input id="search-submit" type="image" src="images/search-submit.png" />
+				</form>
+			</div>
+			<ul id="menu">
+			</ul>
+		</div>
+		<div id="contents">
+		</div>
+		<div id="footer">
+		</div>
+	</div>
+</body>
+</html>
