@@ -5,9 +5,10 @@
 	<title>Herbal Medicine</title>
 	<style>
 		body { background: url(images/bg-glow.png) top center no-repeat #f8ebb8; margin: 0; font-family: sans-serif; font-size: 13px; }
+		img, a { border: 0; outline: 0; }
 		#main_container { width: 908px;margin: 0 auto; }
 		#header, #footer, #contents { width: 100%;}
-		#header { height: 135px; padding: 22px 0 0 0; }
+		#header { height: 135px; padding: 22px 0 0 0; position: relative; }
 		#logo { padding-top: 19px; display: block; float: left; }
 		#top-buttons { float: right }
 		.button, #search { display: block; float: left; margin-right: 14px; }
@@ -20,7 +21,11 @@
 		#search input { border: none; outline: none; }
 		#search-keywords { height: 28px; width: 180px; color: #975b01; }
 		#search-submit { float: right; }
-		#menu { float : right; display: block; }
+
+		#menu { position: absolute; bottom: 0; right: 0; margin:50px 16px 0 0; width:800px; display: block; font-family: sans-serif; font-weight:700; padding:0;}
+		#menu li { list-style:none; float:right; padding:0px 23px 0px 0px; color:#814e01; padding: 15px; height: 16px; }
+		#menu-selected{ background-image:url('images/nav-background.png'); width: 83px; text-align: center; }
+		
 		#contents {min-height: 700px;float:left;background-color: Rgba(255,255,255,0.5) }
 		#homepage-banner {padding: 24px 0 0 22px; background: url(images/homepage.png) top center no-repeat transparent;height:248px;width:882px; }
 		#left-content {width:593px;float:left;border:1px solid black;}
@@ -28,11 +33,14 @@
 		#left-content h1 {padding-left:24px; color: #975b01;}
 		#products {display:block; float:left; padding-left:24px;}
 		#products img { }
-		#footer {height: 180px; }
+		
+		#footer { height: 180px; text-align: center;color: #975b01;line-height: 28px; }
+		#footer a {color: #975b01;padding-right: 2px;padding-left: 2px;}
 	</style>
 	
 	
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>--> 
+<script type="text/javascript" src="jquery-1.6.2.min"></script> 
 	<script type="text/javascript" charset="utf-8"> 
 		$(document).ready(function(){
 			//Code to blur search box
@@ -65,6 +73,13 @@
 				</form>
 			</div>
 			<ul id="menu">
+
+				<li id="menu-selected">HOMEPAGE</li>
+				<li>HERB</li>
+				<li>TEAS</li>
+				<li>SPICE</li>
+				<li>AROMA THERAPY</li>
+				<li>SHOPPING GUIDE</li>
 			</ul>
 		</div>
 		<div id="contents">
@@ -84,6 +99,9 @@
 			<div id="right-content"></div>
 		</div>
 		<div id="footer">
+			 <b>Our Products : </b><a href="">Teas </a>,<a href="">Herbs</a>,<a href="">Spices</a>,<a href="">Herb Grinders</a>,<a href="">Digital Scale</a>,<a href="">Aromaterapy</a><br>
+			 <b>Customer Center :</b> <a href="">Create an account</a>,<a href="">Sigin in</a>,<a href="">Live Help</a>,<a href="">Contact Us</a><br>
+			 <b>Company : </b><a href="">Privacy policy</a>,<a href="">Return policy</a>,<a href="">Terms of use</a>,<a href="">Twitter</a><br>
 		</div>
 	</div>
 </body>
