@@ -33,7 +33,8 @@
 		#right-content {width:260px; min-height:600px; float:right; border:1px solid black; margin-right:19px;}
 		
 		h1, h2, h3, h4 { margin: 0; padding: 0; }
-		h1 { color: #975b01; font-size: 18px; }
+		h1 { color: #975b01; font-size: 18px;margin-top: 7px; }
+		h2 { color: #975b01; font-size: 12px; padding:15px 0 15px 0;text-decoration:underline; }
 		
 		.rounded-border { padding: 15px; border: 1px solid #eaddb9; float: left; width: 563px; }
 		.rounded-corners {
@@ -41,13 +42,18 @@
 		  -webkit-border-radius: 10px; /* Safari, Chrome */
 		  border-radius: 10px; /* CSS3 */
 		}		
-		#products {display:block; float:left; padding-left:24px;}
-		#products img { }
+		.products { float:left; }
+		.product_content{display:block;float:left;width:115px;padding:0 15px 0 0;height:191px;position:relative;margin:10px 5px 45px 5px;}
+		.cart_button{position:absolute; bottom:0;right:0;margin-right:20px}
+		.product_content h1 {float:left; position:absolute; bottom:0; left:0;}
+		.product_border {border-right:1px solid  #eaddb9;padding:0 7px 0 7px;}
+		
 		#video-content{display:block; background: url(images/video_bg.png) top center no-repeat transparent; height:269px; float:left; width: 570px; margin-top: 20px; margin-bottom: 20px; color:#9e7737;padding-right: 14px;padding-left: 14px;}
 		#left-video-content {float :left; width:308px;padding-top: 9px;padding-bottom: 10px;}
 		#right-video-content{float :right;width:229px;padding-top: 14px;padding-right: 21px;line-height: 20px;}
 		#right-video-content h1 {line-height: 28px;}
 		.video-content{padding:0 36px 5px 5px ;font-style:italic;}
+		
 		#footer { height: 180px; text-align: center;color: #975b01;line-height: 28px; }
 		#footer a {color: #975b01;padding-right: 2px;padding-left: 2px;}
 	</style>
@@ -103,11 +109,57 @@
 			<div id="left-content">
 				<div class="rounded-border rounded-corners">
 					<h1>Product spotlight</h1>
-					<div id="products">
-						<img src="images/product1.png" width="40px" height="104px" />
-						<img src="images/product2.png" width="48px" height="99px" />
-						<img src="images/product3.png" width="49px" height="101px" />
-						<img src="images/product4.png" width="97px" height="104px" />
+					<div class="products">
+						<div class="product_content product_border">
+							<img src="images/product1.png" width="40px" height="104px" />
+							<h2>Genmaiche Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content  product_border">
+							<img src="images/product2.png" width="48px" height="99px" />
+							<h2>Osmanthus Chin Husan Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content  product_border">
+							<img src="images/product3.png" width="49px" height="101px" />
+							<h2>Hight Mountain Oolong Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content">
+							<img src="images/product4.png" width="97px" height="104px" />
+							<h2>Jasmine Tea(Whole-Leaf</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+
+						<div class="product_content  product_border">
+							<img src="images/product2.png" width="48px" height="99px" />
+							<h2>Osmanthus Chin Husan Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content  product_border">
+							<img src="images/product4.png" width="97px" height="104px" />
+							<h2>Jasmine Tea(Whole-Leaf</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content  product_border">
+							<img src="images/product3.png" width="49px" height="101px" />
+							<h2>Hight Mountain Oolong Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content">
+							<img src="images/product1.png" width="40px" height="104px" />
+							<h2>Genmaiche Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						
 					</div>
 				</div>
 				<div id="video-content">
