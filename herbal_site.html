@@ -33,20 +33,30 @@
 		#right-content {width:260px; min-height:600px; float:right; margin-right:19px;}
 		
 		h1, h2, h3, h4 { margin: 0; padding: 0; }
-		h1 { color: #975b01; font-size: 18px; }
+		h1 { color: #975b01; font-size: 18px;margin-top: 7px; }
+		h2 { color: #975b01; font-size: 12px; padding:15px 0 15px 0;text-decoration:underline; }
 		
 		.rounded-border { padding: 15px; border: 1px solid #eaddb9; float: left; width: 563px; }
 		.rounded-corners {
 		  -moz-border-radius: 10px; /* Firefox */
 		  -webkit-border-radius: 10px; /* Safari, Chrome */
-		  border-radius: 10px; /* CSS3 */
-		}		
-		#products {display:block; float:left; padding-left:24px;}
-		#products img { }
+		  border-radius: 10px; /* CSS3 */ }
+	
+		.products { float:left; }
+		.product_content{display:block;float:left;width:115px;padding:0 15px 0 0;height:191px;position:relative;margin:10px 5px 45px 5px;}
+		.cart_button{position:absolute; bottom:0;right:0;margin-right:20px}
+		.product_content h1 {float:left; position:absolute; bottom:0; left:0;}
+		.product_border {border-right:1px solid  #eaddb9;padding:0 7px 0 7px;}
+		
+		#video-content{display:block; background: url(images/video_bg.png) top center no-repeat transparent; height:269px; float:left; width: 570px; margin-top: 20px; margin-bottom: 20px; color:#9e7737;padding-right: 14px;padding-left: 14px;}
+		#left-video-content {float :left; width:308px;padding-top: 9px;padding-bottom: 10px;}
+		#right-video-content{float :right;width:229px;padding-top: 14px;padding-right: 21px;line-height: 20px;}
+		#right-video-content h1 {line-height: 28px;}
+		.video-content{padding:0 36px 5px 5px ;font-style:italic;}
 
 		#your-cart{width:100%; padding: 0; }
 		.cart-header{background-color:#f8dc99; height:28px; line-height:27px; padding:8px 17px 0 17px;width:226px; -moz-border-radius: 9px 9px 0 0; -webkit-border-radius: 9px 9px 0 0; border-radius: 9px 9px 0 0; }
-		.cart-header h1{float:left; width:auto; padding-right: 10px;}
+		.cart-header h1{float:left; width:auto; padding-right: 10px; margin:0; }
 		.cart-header a { float:right; color: #920e1e;}
 		#cart-list{ list-style: none; padding: 0; color:#383e01; margin: 0; }
 		#cart-list li { line-height: 24px; padding: 3px 10px 3px 15px; border-bottom: 1px solid #e2dac1; }
@@ -60,6 +70,7 @@
 		.cart-footer input {float:left;padding-right:26px;}
 		.cart-footer label {float:left; color:#5b6501;}
 		.cart-total { float:left; color: #804d01; font-weight: bold; padding-left: 10px; font-size: 18px; }
+
 
 		#footer { height: 180px; text-align: center;color: #975b01;line-height: 28px; }
 		#footer a {color: #975b01;padding-right: 2px;padding-left: 2px;}
@@ -118,11 +129,67 @@
 			<div id="left-content">
 				<div class="rounded-border rounded-corners">
 					<h1>Product spotlight</h1>
-					<div id="products">
-						<img src="images/product1.png" width="40px" height="104px" />
-						<img src="images/product2.png" width="48px" height="99px" />
-						<img src="images/product3.png" width="49px" height="101px" />
-						<img src="images/product4.png" width="97px" height="104px" />
+					<div class="products">
+						<div class="product_content product_border">
+							<img src="images/product1.png" width="40px" height="104px" />
+							<h2>Genmaiche Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content  product_border">
+							<img src="images/product2.png" width="48px" height="99px" />
+							<h2>Osmanthus Chin Husan Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content  product_border">
+							<img src="images/product3.png" width="49px" height="101px" />
+							<h2>Hight Mountain Oolong Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content">
+							<img src="images/product4.png" width="97px" height="104px" />
+							<h2>Jasmine Tea(Whole-Leaf</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+
+						<div class="product_content  product_border">
+							<img src="images/product2.png" width="48px" height="99px" />
+							<h2>Osmanthus Chin Husan Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content  product_border">
+							<img src="images/product4.png" width="97px" height="104px" />
+							<h2>Jasmine Tea(Whole-Leaf</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content  product_border">
+							<img src="images/product3.png" width="49px" height="101px" />
+							<h2>Hight Mountain Oolong Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						<div class="product_content">
+							<img src="images/product1.png" width="40px" height="104px" />
+							<h2>Genmaiche Tea</h2>
+							<h1>$249</h1>
+							<img class="cart_button" src="images/cart_button.png" />
+						</div>
+						
+					</div>
+				</div>
+				<div id="video-content">
+					<div id="left-video-content">
+						<iframe width="305" height="254" src="http://www.youtube.com/embed/dIzhb6XayJY" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div id="right-video-content">
+						<h1>Doctor's opinion</h1>
+						<div class="video-content">"It makes little differents how careful you are: with so many processed foods on the market today,each of us unconsciously ingests a muttitude of artificial additives. Even themost basic supermarket items contain colorants,flavoring,and preservatives. When"</div>
+						<b>Dr. Jack Shepard ,LA</b>
 					</div>
 				</div>
 			</div>
@@ -135,7 +202,7 @@
 						<img src="images/cart.png" />
 						<a href="#">Edit Items</a>
 					</div>
-
+					<div class="clear"></div>
 					<ul id="cart-list">
 						<li>
 							<input class="cart-input" type="text" value="1" size="2"/>
