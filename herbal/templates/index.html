@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block banner %}
+<div id="homepage-banner">
+	<img src="{{ MEDIA_URL }}{% if nav.image %}{{ nav.image }}{% else %}images/homepage-banner.png{% endif %}" width="860px" height="219px" />
+</div>
+{% endblock %}
+
+{% block left_content %}
+<div id="left-content">
+	<div class="rounded-border rounded-corners">
+		<h1>Product spotlight</h1>
+		<div class="products">
+			<div class="product_content product_border">
+				<img src="{{ MEDIA_URL }}images/product1.png" width="40px" height="104px" />
+				<h2>Genmaiche Tea</h2>
+				<h1>$249</h1>
+				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+			</div>
+			<div class="product_content  product_border">
+				<img src="{{ MEDIA_URL }}images/product2.png" width="48px" height="99px" />
+				<h2>Osmanthus Chin Husan Tea</h2>
+				<h1>$249</h1>
+				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+			</div>
+			<div class="product_content  product_border">
+				<img src="{{ MEDIA_URL }}images/product3.png" width="49px" height="101px" />
+				<h2>Hight Mountain Oolong Tea</h2>
+				<h1>$249</h1>
+				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+			</div>
+			<div class="product_content">
+				<img src="{{ MEDIA_URL }}images/product4.png" width="97px" height="104px" />
+				<h2>Jasmine Tea(Whole-Leaf</h2>
+				<h1>$249</h1>
+				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+			</div>
+
+			<div class="product_content  product_border">
+				<img src="{{ MEDIA_URL }}images/product2.png" width="48px" height="99px" />
+				<h2>Osmanthus Chin Husan Tea</h2>
+				<h1>$249</h1>
+				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+			</div>
+			<div class="product_content  product_border">
+				<img src="{{ MEDIA_URL }}images/product4.png" width="97px" height="104px" />
+				<h2>Jasmine Tea(Whole-Leaf</h2>
+				<h1>$249</h1>
+				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+			</div>
+			<div class="product_content  product_border">
+				<img src="{{ MEDIA_URL }}images/product3.png" width="49px" height="101px" />
+				<h2>Hight Mountain Oolong Tea</h2>
+				<h1>$249</h1>
+				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+			</div>
+			<div class="product_content">
+				<img src="{{ MEDIA_URL }}images/product1.png" width="40px" height="104px" />
+				<h2>Genmaiche Tea</h2>
+				<h1>$249</h1>
+				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+			</div>
+			
+		</div>
+	</div>
+	<div id="video-content">
+		<div id="left-video-content">
+			<iframe width="305" height="254" src="http://www.youtube.com/embed/dIzhb6XayJY" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="right-video-content">
+			<h1>Doctor's opinion</h1>
+			<div class="video-content">"It makes little differents how careful you are: with so many processed foods on the market today,each of us unconsciously ingests a muttitude of artificial additives. Even themost basic supermarket items contain colorants,flavoring,and preservatives. When"</div>
+			<b>Dr. Jack Shepard ,LA</b>
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block right_content %}
+<div id="right-content">
+	<div id="your-cart" class="rounded-border rounded-corners">
+		<form id="cart-form" >
+		<div class="cart-header">
+			<h1>Your Cart</h1>
+			<img src="{{ MEDIA_URL }}images/cart.png" />
+			<a href="#">Edit Items</a>
+		</div>
+		<div class="clear"></div>
+		<ul id="cart-list">
+			<li>
+				<input class="cart-input" type="text" value="1" size="2"/>
+				<span class="cart-title">Herbal Tea</span>
+				<img class="cart-close" src="{{ MEDIA_URL }}images/close.png"/> <span class="cart-price">$539</span>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<input class="cart-input" type="text" value="1" size="2"/>
+				<span class="cart-title">Chilly spice</span>
+				<img class="cart-close" src="{{ MEDIA_URL }}images/close.png"/><span class="cart-price">$49</span>
+				<div class="clear"></div>
+			</li>
+		</ul>
+
+		<div class="cart-footer">
+			<input type="image" src="{{ MEDIA_URL }}images/checkout.png" /> 
+			<label>Total:</label>
+			<span class="cart-total">$388</span>
+		</div>
+		</form>
+	</div>
+</div>
+{% endblock %}

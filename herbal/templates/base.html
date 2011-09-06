@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-AU" lang="en-AU">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Herbal Medicine</title>
+	<style>
+		body { background: url({{ MEDIA_URL }}images/bg-glow.png) top center no-repeat #f8ebb8; margin: 0; font-family: sans-serif; font-size: 13px; }
+		img, a { border: 0; outline: 0; }
+		#main_container { width: 908px;margin: 0 auto; }
+		#header, #footer, #contents { width: 100%;}
+		#header { height: 135px; padding: 22px 0 0 0; position: relative; }
+		#logo { padding-top: 19px; display: block; float: left; }
+		#top-buttons { float: right }
+		.button, #search { display: block; float: left; margin-right: 14px; }
+		#live-help { background: url({{ MEDIA_URL }}images/live-help.png) top center no-repeat transparent; width: 91px; font-weight: bold; margin-right: 7px !important; }
+		#login-register { background: url({{ MEDIA_URL }}images/login-register.png) top center no-repeat transparent; width: 118px; }
+		.button { height: 39px; padding: 0 0 0 15px; line-height: 39px; color: #975b01; text-decoration: none; }
+		.button a { text-decoration: none; color: #975b01; }
+		a.button:hover, .button a:hover { text-decoration: underline; }
+		#search { background: url({{ MEDIA_URL }}images/search.png) top center no-repeat transparent; height: 29px; width: 219px; padding: 5px 5px 5px 10px;}
+		#search input { border: none; outline: none; }
+		#search-keywords { height: 28px; width: 180px; color: #975b01; }
+		#search-submit { float: right; }
+
+		#menu { position: absolute; bottom: 0; right: 0; margin:50px 16px 0 0; width:800px; display: block; font-family: sans-serif; font-weight:700; padding:0;}
+		#menu li { list-style:none; float:right; padding:0px 23px 0px 0px; color:#814e01; padding: 15px; height: 16px; }
+		#menu li a { color: inherit; text-decoration: none; }
+		#menu-selected{ background-image:url('{{ MEDIA_URL }}images/nav-background.png'); width: 83px; text-align: center; }
+		
+		#contents {min-height: 700px;float:left;background-color: Rgba(255,255,255,0.5) }
+		#homepage-banner {padding: 24px 0 0 22px; background: url({{ MEDIA_URL }}images/homepage.png) top center no-repeat transparent;height:248px;width:882px; }
+		#left-content {margin: 0 0 0 24px; width:595px; float:left; }
+		#right-content {width:260px; min-height:600px; float:right; margin-right:19px;}
+		
+		h1, h2, h3, h4 { margin: 0; padding: 0; }
+		h1 { color: #975b01; font-size: 18px;margin-top: 7px; }
+		h2 { color: #975b01; font-size: 12px; padding:15px 0 15px 0;text-decoration:underline; }
+		
+		.rounded-border { padding: 15px; border: 1px solid #eaddb9; float: left; width: 563px; }
+		.rounded-corners {
+		  -moz-border-radius: 10px; /* Firefox */
+		  -webkit-border-radius: 10px; /* Safari, Chrome */
+		  border-radius: 10px; /* CSS3 */ }
+	
+		.products { float:left; }
+		.product_content{display:block;float:left;width:115px;padding:0 15px 0 0;height:191px;position:relative;margin:10px 5px 45px 5px;}
+		.cart_button{position:absolute; bottom:0;right:0;margin-right:20px}
+		.product_content h1 {float:left; position:absolute; bottom:0; left:0;}
+		.product_border {border-right:1px solid  #eaddb9;padding:0 7px 0 7px;}
+		
+		#video-content{display:block; background: url({{ MEDIA_URL }}images/video_bg.png) top center no-repeat transparent; height:269px; float:left; width: 570px; margin-top: 20px; margin-bottom: 20px; color:#9e7737;padding-right: 14px;padding-left: 14px;}
+		#left-video-content {float :left; width:308px;padding-top: 9px;padding-bottom: 10px;}
+		#right-video-content{float :right;width:229px;padding-top: 14px;padding-right: 21px;line-height: 20px;}
+		#right-video-content h1 {line-height: 28px;}
+		.video-content{ padding:0 0 5px 5px ;font-style:italic;}
+
+		#your-cart{width:100%; padding: 0; }
+		.cart-header{background-color:#f8dc99; height:28px; line-height:27px; padding:8px 17px 0 17px;width:226px; -moz-border-radius: 9px 9px 0 0; -webkit-border-radius: 9px 9px 0 0; border-radius: 9px 9px 0 0; }
+		.cart-header h1{float:left; width:auto; padding-right: 10px; margin:0; }
+		.cart-header a { float:right; color: #920e1e;}
+		#cart-list{ list-style: none; padding: 0; color:#383e01; margin: 0; }
+		#cart-list li { line-height: 24px; padding: 3px 10px 3px 15px; border-bottom: 1px solid #e2dac1; }
+		
+		.cart-input { border: 1px solid brown; margin-right: 10px; float:left; color: inherit; padding-left: 5px; }
+		.cart-title{float:left;}
+		.cart-price{float:right;}
+		.cart-close{float:right; margin: 5px 0 0 7px; cursor: pointer; }
+		
+		.cart-footer { line-height: 35px; font-size:15px; padding: 8px 14px; height: 33px; }
+		.cart-footer input {float:left;padding-right:26px;}
+		.cart-footer label {float:left; color:#5b6501;}
+		.cart-total { float:left; color: #804d01; font-weight: bold; padding-left: 10px; font-size: 18px; }
+
+
+		#footer { height: 180px; text-align: center;color: #975b01;line-height: 28px; }
+		#footer a {color: #975b01;padding-right: 2px;padding-left: 2px;}
+
+		.clear{clear:both;}
+	</style>
+	
+	
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>--> 
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.6.2.min.js"></script> 
+	<script type="text/javascript" charset="utf-8"> 
+		$(document).ready(function(){
+			//Code to blur search box
+			$('#search-keywords').each(function() {
+				var default_value = this.value;
+				$(this).focus(function() {
+					if(this.value == default_value) {
+						this.value = '';
+					}
+				});
+				$(this).blur(function() {
+					if(this.value == '') {
+						this.value = default_value;
+					}
+				});
+			});
+			
+			{% block doc_ready %}{% endblock %}
+		});
+	</script> 
+	
+	{% block extra_head %}{% endblock %}
+</head>
+<body>
+	<div id="main_container">
+		<div id="header">
+			<a id="logo" href="."><img src="{{ MEDIA_URL }}images/logo.png" /></a>
+			<div id="top-buttons">
+				<a id="live-help" class="button" href="#">Live help</a>
+				<div id="login-register" class="button" href="#"><a href="login">Login</a>/<a href="register">Register</a></div>
+				<form id="search">
+					<input id="search-keywords" name="search-keywords" type="text" value="Search" />
+					<input id="search-submit" type="image" src="{{ MEDIA_URL }}images/search-submit.png" />
+				</form>
+			</div>
+			<ul id="menu">
+				{% for n in navigations %}
+					{% if 'home' in n.slug %}
+						<li {% if n = nav %}id="menu-selected"{% endif %}><a href="{% url index %}">{{ n.title|upper }}</a></li>
+					{% else %}
+						<li {% if n = nav %}id="menu-selected"{% endif %}><a href="{% url nav n.slug %}">{{ n.title|upper }}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+		<div id="contents">
+			{% block banner %}{% endblock %}
+			{% block left_content %}{% endblock %}
+			{% block right_content %}{% endblock %}
+		</div>
+		<div id="footer">
+			 <b>Our Products : </b><a href="">Teas </a>,<a href="">Herbs</a>,<a href="">Spices</a>,<a href="">Herb Grinders</a>,<a href="">Digital Scale</a>,<a href="">Aromaterapy</a><br>
+			 <b>Customer Center :</b> <a href="">Create an account</a>,<a href="">Sigin in</a>,<a href="">Live Help</a>,<a href="">Contact Us</a><br>
+			 <b>Company : </b><a href="">Privacy policy</a>,<a href="">Return policy</a>,<a href="">Terms of use</a>,<a href="">Twitter</a><br>
+		</div>
+	</div>
+</body>
+</html>
