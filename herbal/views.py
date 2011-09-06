@@ -38,10 +38,7 @@ def cart_update(request):
 	else:
 		product.quantity = 1
 		cart.append(product)
-	request.session['cart'] = cart
-	for p in cart:
-		print p, p.quantity
-		
+	request.session['cart'] = cart		
 	return HttpResponse('success', mimetype='application/javascript')
 
 def cart_clear(request):
