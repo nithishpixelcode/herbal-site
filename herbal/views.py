@@ -7,6 +7,7 @@ from django.template.loader import get_template
 from django.utils import simplejson
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from forms import *
 
 def index(request):
 	if Navigation.objects.filter(slug='home'):
@@ -24,6 +25,7 @@ def nav(request, nav):
 def cart_delete(request):
 	cart = request.session.get('cart', [])
 	product = Product.objects.get(id=request.GET['id'])
+	print 'before : ' + str(len(cart))
 	if product in cart:
 		i = pos = 0
 		for p in cart:
@@ -31,6 +33,7 @@ def cart_delete(request):
 				pos = i
 			i+=1
 		del cart[pos]
+	print 'after : ' + str(len(cart))
 	request.session['cart'] = cart		
 	return HttpResponse('success', mimetype='application/javascript')
 
@@ -58,3 +61,18 @@ def cart_update(request):
 def cart_clear(request):
 	request.session['cart'] = []
 	return HttpResponse('success', mimetype='application/javascript')	
+
+
+def register(request):
+	if request.method == 'POST':
+		form = RegistrationForm(data=request.POST)
+		if form.is_valid():            
+			new_user = User.objects.create_user(form.cleaned_data['username'], form.cleaned_data['email'], form.cleaned_data['password1'])
+			user = authenticate(username=new_user.username, password=form.cleaned_data['password1'])
+			login(request, user)
+			return HttpResponseRedirect('/')
+	else:
+		form = RegistrationForm()
+	
+	context = { 'form' : form }
+	return render_to_response('register.html', context, context_instance = RequestContext(request))
