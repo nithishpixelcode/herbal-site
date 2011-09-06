@@ -10,10 +10,10 @@ admin.autodiscover()
 autoregister('herbal')
 
 urlpatterns = patterns('',
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/', include(admin.site.urls)),
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
-    url(r'^$', 'herbal.views.index', name='index'),
-    url(r'^(?P<nav>[-\w]+)/$', 'herbal.views.nav', name='nav'),
+	(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+	(r'^admin/', include(admin.site.urls)),
+	(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
+	url(r'^$', 'herbal.views.index', name='index'),
+	url(r'^(?P<nav>[-\w]+)/$', 'herbal.views.nav', name='nav'),
 )
 
