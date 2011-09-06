@@ -47,7 +47,7 @@
 		<div class="clear"></div>
 		<ul id="cart-list">
 			{% for p in cart %}
-				<li>
+				<li id="{{ p.id }}">
 					<input class="cart-input" type="text" value="{{ p.quantity }}" size="2"/>
 					<span class="cart-title">{{ p.title }}</span>
 					<img class="cart-close" src="{{ MEDIA_URL }}images/close.png"/> <span class="cart-price">${{ p.price }}</span>
