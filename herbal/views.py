@@ -15,6 +15,26 @@ def index(request):
 		nav = Navigation.objects.get_or_create(title='Homepage', slug='home')
 	context = {'nav' : nav }
 	return render_to_response('index.html', context, context_instance = RequestContext(request))
+	
+def login_view(request, message=''):
+	if request.POST:
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(username=username, password=password)
+		if user is not None:
+			if user.is_active:
+				login(request, user)
+				return HttpResponseRedirect(reverse('index'))
+			else:
+				message = 'Disabled user'
+		else:
+			message = 'Invalid authentication'
+	context ={'message' : message}
+	return render_to_response('login.html', context, context_instance = RequestContext(request))
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
 
 def nav(request, nav):
 	nav = Navigation.objects.get(slug=nav)
