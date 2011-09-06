@@ -21,8 +21,22 @@ def nav(request, nav):
 	context = {'nav' : nav }
 	return render_to_response('nav.html', context, context_instance = RequestContext(request))
 
+def cart_delete(request):
+	cart = request.session.get('cart', [])
+	product = Product.objects.get(id=request.GET['id'])
+	if product in cart:
+		i = pos = 0
+		for p in cart:
+			if p == product:
+				pos = i
+			i+=1
+		del cart[pos]
+	request.session['cart'] = cart		
+	return HttpResponse('success', mimetype='application/javascript')
+
 def cart_update(request):
 	cart = request.session.get('cart', [])
+	print cart
 	product = Product.objects.get(id=request.GET['id'])
 
 	if product in cart:
