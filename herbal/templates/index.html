@@ -11,56 +11,16 @@
 	<div class="rounded-border rounded-corners">
 		<h1>Product spotlight</h1>
 		<div class="products">
-			<div class="product_content product_border">
-				<img src="{{ MEDIA_URL }}images/product1.png" width="40px" height="104px" />
-				<h2>Genmaiche Tea</h2>
-				<h1>$249</h1>
-				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-			</div>
-			<div class="product_content  product_border">
-				<img src="{{ MEDIA_URL }}images/product2.png" width="48px" height="99px" />
-				<h2>Osmanthus Chin Husan Tea</h2>
-				<h1>$249</h1>
-				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-			</div>
-			<div class="product_content  product_border">
-				<img src="{{ MEDIA_URL }}images/product3.png" width="49px" height="101px" />
-				<h2>Hight Mountain Oolong Tea</h2>
-				<h1>$249</h1>
-				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-			</div>
-			<div class="product_content">
-				<img src="{{ MEDIA_URL }}images/product4.png" width="97px" height="104px" />
-				<h2>Jasmine Tea(Whole-Leaf</h2>
-				<h1>$249</h1>
-				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-			</div>
-
-			<div class="product_content  product_border">
-				<img src="{{ MEDIA_URL }}images/product2.png" width="48px" height="99px" />
-				<h2>Osmanthus Chin Husan Tea</h2>
-				<h1>$249</h1>
-				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-			</div>
-			<div class="product_content  product_border">
-				<img src="{{ MEDIA_URL }}images/product4.png" width="97px" height="104px" />
-				<h2>Jasmine Tea(Whole-Leaf</h2>
-				<h1>$249</h1>
-				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-			</div>
-			<div class="product_content  product_border">
-				<img src="{{ MEDIA_URL }}images/product3.png" width="49px" height="101px" />
-				<h2>Hight Mountain Oolong Tea</h2>
-				<h1>$249</h1>
-				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-			</div>
-			<div class="product_content">
-				<img src="{{ MEDIA_URL }}images/product1.png" width="40px" height="104px" />
-				<h2>Genmaiche Tea</h2>
-				<h1>$249</h1>
-				<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-			</div>
-			
+			{% for p in products %}
+				{% if p.featured %}
+					<div class="product_content product_border" rel="{{ p.id }}">
+						<img class="product_image" src="{{ MEDIA_URL }}{{ p.image }}" />
+						<h2>{{ p.title }}</h2>
+						<h1>${{ p.price }}</h1>
+						<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
+					</div>		
+				{% endif %}
+			{% endfor %}
 		</div>
 	</div>
 	<div id="video-content">
@@ -82,22 +42,18 @@
 		<div class="cart-header">
 			<h1>Your Cart</h1>
 			<img src="{{ MEDIA_URL }}images/cart.png" />
-			<a href="#">Edit Items</a>
+			<a class="clear-cart">Clear Items</a>
 		</div>
 		<div class="clear"></div>
 		<ul id="cart-list">
-			<li>
-				<input class="cart-input" type="text" value="1" size="2"/>
-				<span class="cart-title">Herbal Tea</span>
-				<img class="cart-close" src="{{ MEDIA_URL }}images/close.png"/> <span class="cart-price">$539</span>
-				<div class="clear"></div>
-			</li>
-			<li>
-				<input class="cart-input" type="text" value="1" size="2"/>
-				<span class="cart-title">Chilly spice</span>
-				<img class="cart-close" src="{{ MEDIA_URL }}images/close.png"/><span class="cart-price">$49</span>
-				<div class="clear"></div>
-			</li>
+			{% for p in cart %}
+				<li>
+					<input class="cart-input" type="text" value="{{ p.quantity }}" size="2"/>
+					<span class="cart-title">{{ p.title }}</span>
+					<img class="cart-close" src="{{ MEDIA_URL }}images/close.png"/> <span class="cart-price">${{ p.price }}</span>
+					<div class="clear"></div>
+				</li>			
+			{% endfor %}
 		</ul>
 
 		<div class="cart-footer">
