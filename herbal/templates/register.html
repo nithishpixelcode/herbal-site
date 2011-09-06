@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block right_content %}
+    <form name="register-user" id="register-user" action="{% url register %}" method="POST" >{% csrf_token %}
+        <table>        
+            <tbody>
+                <tr>
+                    <td>Username</td>
+                    <td>{{ form.username }}{{ form.username.errors }}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{ form.email }}{{ form.email.errors }}</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>{{ form.password1 }}{{ form.password1.errors }}</td>
+                </tr>
+                <tr>
+                    <td>Password (again)</td>
+                    <td>{{ form.password2 }}{{ form.password2.errors }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input id="signup_submit"  type="submit"  value="Submit" /><br/>
+                        {{ form.non_field_errors }}
+                    </td>    
+                </tr>
+            </tbody>
+        </table> 
+    </form>
+    
+{% endblock %}
