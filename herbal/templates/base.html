@@ -196,7 +196,7 @@
 				<a id="live-help" class="button" href="#">Live help</a>
 				<div id="login-register" class="button">
 					{% if user.is_anonymous %}
-						<a href="{% url login %}">Login</a>/<a href="{% url register %}">Register</a>>
+						<a href="{% url login %}">Login</a>/<a href="{% url register %}">Register</a>
 					{% else %}
 						<a  href="{% url logout %}">Logout</a>
 					{% endif %}			
