@@ -20,3 +20,27 @@ def nav(request, nav):
 	nav = Navigation.objects.get(slug=nav)
 	context = {'nav' : nav }
 	return render_to_response('nav.html', context, context_instance = RequestContext(request))
+
+def cart_update(request):
+	cart = request.session.get('cart', [])
+	product = Product.objects.get(id=request.GET['id'])
+
+	if product in cart:
+		i = pos = 0
+		for p in cart:
+			if p == product:
+				product = p
+				cart.pop(i)
+				pos = i
+			i+=1
+		product.quantity = product.quantity + 1		
+		cart.insert(pos, product)
+	else:
+		product.quantity = 1
+		cart.append(product)
+	request.session['cart'] = cart		
+	return HttpResponse('success', mimetype='application/javascript')
+
+def cart_clear(request):
+	request.session['cart'] = []
+	return HttpResponse('success', mimetype='application/javascript')	
