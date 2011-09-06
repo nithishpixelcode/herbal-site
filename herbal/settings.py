@@ -153,3 +153,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	"django.contrib.messages.context_processors.messages",
 	"herbal.context_processors.main",
 )
+
+try:
+	from custom_settings import *
+except ImportError:
+	pass
+	
