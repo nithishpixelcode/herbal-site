@@ -8,6 +8,7 @@ from django.utils import simplejson
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from forms import *
+from django.http import Http404
 
 def index(request):
 	if Navigation.objects.filter(slug='home'):
@@ -33,19 +34,19 @@ def login_view(request, message=''):
 	context ={'message' : message}
 	return render_to_response('login.html', context, context_instance = RequestContext(request))
 
+@login_required
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
 def nav(request, nav):
-	nav = Navigation.objects.get(slug=nav)
+	nav = get_object_or_404(Navigation, slug=nav)
 	context = {'nav' : nav }
 	return render_to_response('nav.html', context, context_instance = RequestContext(request))
 
 def cart_delete(request):
 	cart = request.session.get('cart', [])
 	product = Product.objects.get(id=request.GET['id'])
-	print 'before : ' + str(len(cart))
 	if product in cart:
 		i = pos = 0
 		for p in cart:
@@ -53,7 +54,6 @@ def cart_delete(request):
 				pos = i
 			i+=1
 		del cart[pos]
-	print 'after : ' + str(len(cart))
 	request.session['cart'] = cart		
 	return HttpResponse('success', mimetype='application/javascript')
 
@@ -81,16 +81,13 @@ def cart_update(request):
 def cart_clear(request):
 	request.session['cart'] = []
 	return HttpResponse('success', mimetype='application/javascript')	
-
-def search (request):
+	
+def search(request, products=[]):
 	if request.POST:
 		products = Product.objects.filter(title__icontains=request.POST['keyword'])
-	else:
-		products=[]
 	context ={ 'products':products, 'search' : True, 'search_keyword' : request.POST.get('keyword', '')}
 	return render_to_response('search.html', context, context_instance = RequestContext(request))
 	
-
 def register(request):
 	if request.method == 'POST':
 		form = RegistrationForm(data=request.POST)
@@ -98,10 +95,9 @@ def register(request):
 			new_user = User.objects.create_user(form.cleaned_data['username'], form.cleaned_data['email'], form.cleaned_data['password1'])
 			user = authenticate(username=new_user.username, password=form.cleaned_data['password1'])
 			login(request, user)
-			return HttpResponseRedirect('/')
+			return HttpResponseRedirect(reverse('index'))
 	else:
 		form = RegistrationForm()
-	
 	context = { 'form' : form }
 	return render_to_response('register.html', context, context_instance = RequestContext(request))
 

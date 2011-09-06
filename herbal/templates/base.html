@@ -106,7 +106,7 @@
 			function total(){
 				var total = 0;
 				$('#cart-list li').each(function(){
-					var amount = parseInt($(this).find('inpuot').val());
+					var amount = parseInt($(this).find('input').val());
 					var price = parseFloat($(this).find('.cart-price').html().replace('$', ''));
 					total+=price*amount;
 				});
