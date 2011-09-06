@@ -44,3 +44,12 @@ def cart_update(request):
 def cart_clear(request):
 	request.session['cart'] = []
 	return HttpResponse('success', mimetype='application/javascript')	
+
+def search (request):
+	if request.POST:
+		products = Product.objects.filter(title__icontains=request.POST['keyword'])
+	else:
+		products=[]
+	context ={ 'products':products, 'search' : True, 'search_keyword' : request.POST.get('keyword', '')}
+	return render_to_response('search.html', context, context_instance = RequestContext(request))
+	

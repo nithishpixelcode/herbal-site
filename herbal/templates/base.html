@@ -79,6 +79,7 @@
 		#footer a {color: #975b01;padding-right: 2px;padding-left: 2px;}
 
 		.clear{clear:both;}
+		
 	</style>
 	
 	
@@ -105,7 +106,7 @@
 			function total(){
 				var total = 0;
 				$('#cart-list li').each(function(){
-					var amount = parseInt($(this).find('input').val());
+					var amount = parseInt($(this).find('inpuot').val());
 					var price = parseFloat($(this).find('.cart-price').html().replace('$', ''));
 					total+=price*amount;
 				});
@@ -139,7 +140,7 @@
 								<div class="clear"></div></li>';
 								$('#cart-list').append(html);
 							}
-							total();					  
+							total();
 					  }
 				});
 			});
@@ -180,12 +181,12 @@
 <body>
 	<div id="main_container">
 		<div id="header">
-			<a id="logo" href="."><img src="{{ MEDIA_URL }}images/logo.png" /></a>
+			<a id="logo" href="{% url index %}"><img src="{{ MEDIA_URL }}images/logo.png" /></a>
 			<div id="top-buttons">
 				<a id="live-help" class="button" href="#">Live help</a>
 				<div id="login-register" class="button" href="#"><a href="login">Login</a>/<a href="register">Register</a></div>
-				<form id="search">
-					<input id="search-keywords" name="search-keywords" type="text" value="Search" />
+				<form id="search" action="{% url search %}" method="post">{% csrf_token %}
+					<input id="search-keywords" name="keyword" type="text" value="{% if search_keyword %}{{ search_keyword }}{% else %}Search{% endif %}"  />
 					<input id="search-submit" type="image" src="{{ MEDIA_URL }}images/search-submit.png" />
 				</form>
 			</div>
