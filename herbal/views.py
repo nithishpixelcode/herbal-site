@@ -53,7 +53,6 @@ def cart_delete(request):
 				pos = i
 			i+=1
 		del cart[pos]
-	print 'after : ' + str(len(cart))
 	request.session['cart'] = cart		
 	return HttpResponse('success', mimetype='application/javascript')
 
