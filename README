@@ -18,4 +18,11 @@ Training Day 1 - HTML/CSS
 
 Training Day 2 - Djangofy
 
-
+1. Use of widgets - used for RemovableFileField here.
+2. User login and authentication.
+3. Implementations of sitemap generation through urls.py
+4. ping_google() trick to make googlebots to track the website.
+5. Implementation of forms for posting user-input datas.
+6. Usage of context_processors.py to declare globally accessible template variables.
+7. Autoregistering all the django apps in the django project - autoregister.py.
+8. Adding Html Error pages. E.g.: 404.html for 404 error.
