@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block left_content %}
+<div id="left-content">
+	<div class="rounded-border rounded-corners">
+		<h1>Search Results</h1>
+		<div class="products">
+			{% include "products.html" %}
+			{% if not products %}
+			<div>No result Found !</div>
+			{%endif%}
+			
+		</div>
+	</div>
+</div>
+{% endblock %}

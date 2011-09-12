@@ -11,16 +11,7 @@
 	<div class="rounded-border rounded-corners">
 		<h1>Product spotlight</h1>
 		<div class="products">
-			{% for p in products %}
-				{% if p.featured %}
-					<div class="product_content product_border" rel="{{ p.id }}">
-						<img class="product_image" src="{{ MEDIA_URL }}{{ p.image }}" />
-						<h2>{{ p.title }}</h2>
-						<h1>${{ p.price }}</h1>
-						<img class="cart_button" src="{{ MEDIA_URL }}images/cart_button.png" />
-					</div>		
-				{% endif %}
-			{% endfor %}
+			{% include "products.html" %}
 		</div>
 	</div>
 	<div id="video-content">
